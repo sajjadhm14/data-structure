@@ -2,6 +2,10 @@
 
 /**
  *  class representing implementation of queues.
+ *
+ * @param array $arr
+ * @param int $capacity
+ * @param int $size
  */
 class myQueue
 {
@@ -15,7 +19,7 @@ class myQueue
         $this->arr = [];
         $this->size = 0;
     }
-    /*
+    /**
     * method represent is empty implementation to check whether is any queue is exists.
     *
     * @return bool
@@ -26,7 +30,7 @@ class myQueue
         return $this->size === 0;
     }
 
-    /*
+    /**
      * method represent is empty implementation to check whether how many queues is out there .
      *
      * @return bool
@@ -37,7 +41,7 @@ class myQueue
         return $this->size === $this->capacity;
     }
 
-    /*
+    /**
      * Adds an element x at the rear of the queue.
      *
      * @param int $x to add number into queue
@@ -53,7 +57,7 @@ class myQueue
         $this->arr[$this->size++] = $x;
     }
 
-    /*
+    /**
      * Removes the front element of the queue.
      *
      *
@@ -72,7 +76,7 @@ class myQueue
         unset($this->arr[$this->size]); // clean up the last element
     }
 
-    /*
+    /**
      *  Returns the front element of the queue.
      *
      * @return int
@@ -87,7 +91,7 @@ class myQueue
         return $this->arr[0];
     }
 
-    /*
+    /**
      * Returns the last element of the queue.
      *
      * @return int
@@ -103,19 +107,22 @@ class myQueue
     }
 }
 
-// Example usage
 $q = new myQueue(3);
 
 $q->enqueue(10);
 $q->enqueue(20);
 $q->enqueue(30);
-echo "Front: " . $q->getFront() . PHP_EOL;
-
+echo "Front: " . $q->getFront() ;
+echo "<br/>";
 $q->dequeue();
-echo "Front: " . $q->getFront() . PHP_EOL;
-echo "Rear: " . $q->getRear() . PHP_EOL;
+echo "Front: " . $q->getFront() ;
+echo "<br/>";
+echo "Front: " . $q->getRear() ;
 
 $q->enqueue(40);
+
+echo "<br/>";
+echo "Rear: " . $q->getRear() ;
 
 
 
